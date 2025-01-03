@@ -10,7 +10,7 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import victorgponce.com.webdataupdater.network.Uploader; // Importamos la clase Uploader
+import victorgponce.com.webdataupdater.network.Uploader;
 
 import java.io.File;
 import java.io.FileReader;
@@ -19,7 +19,6 @@ import java.io.IOException;
 
 import static victorgponce.com.webdataupdater.Webdataupdater.MODID;
 
-@Mod(MODID)
 public class ServerMetrics {
 
     private static final String FILE_NAME = "server_metrics.json";
@@ -27,10 +26,6 @@ public class ServerMetrics {
     private long lastTickTime = 0;
 
     private static final String SERVER_URL = "";
-
-    public ServerMetrics() {
-        MinecraftForge.EVENT_BUS.register(this);
-    }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
